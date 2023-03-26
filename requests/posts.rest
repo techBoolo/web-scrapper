@@ -1,0 +1,8 @@
+http://localhost:3001/posts
+
+-i
+
+# List of posts
+
+GET /
+
