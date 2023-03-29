@@ -1,8 +1,7 @@
-import { getDB } from '../config/db.js'
+import Post from '../models/post_dao.js'
 
 const index = async (req, res) => {
-  const db = getDB()
-  const result = await db.post.findMany()
+  const result = await Post.getAll()
 
   res.status(200).json(result)
 }
