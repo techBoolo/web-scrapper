@@ -5,6 +5,7 @@ import routeNotFound from './middlewares/routeNotFound.js'
 import logger from './middlewares/logger.js'
 import postRoute from './routes/post.js'
 import userRoute from './routes/user.js'
+import scrapRoute from './routes/scrap.js'
 
 const app = express()
 app.use(express.json())
@@ -16,6 +17,7 @@ app.get('/', (req, res) => {
 
 app.use('/posts', postRoute)
 app.use('/users', userRoute)
+app.use('/scrap', scrapRoute)
 
 app.use(routeNotFound)
 app.use(errorHandler)
