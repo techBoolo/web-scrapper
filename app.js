@@ -1,5 +1,6 @@
 import express from 'express'
 import 'express-async-errors'
+import cors from 'cors'
 import errorHandler from './middlewares/errorHandler.js'
 import routeNotFound from './middlewares/routeNotFound.js'
 import logger from './middlewares/logger.js'
@@ -8,6 +9,7 @@ import userRoute from './routes/user.js'
 import scrapRoute from './routes/scrap.js'
 
 const app = express()
+app.use(cors())
 app.use(express.json())
 app.use(logger)
 

@@ -8,8 +8,8 @@ const getAll = async () => {
 const create = async (postData) => {
   const { source, ...rest } = postData
   const db = getDB()
-  return await db.user.upsert({
-    where: { source },
+  return await db.post.upsert({
+    where: { source: source },
     update: rest,
     create: postData,
   })

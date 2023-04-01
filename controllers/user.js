@@ -1,5 +1,6 @@
 import ErrorResponse from '../utils/errorResponse.js'
 import helpers  from '../utils/helpers.js'
+
 const signin = async (req, res) => {
   const { name, password } = req.body
   if(name == process.env.NAME && password == process.env.PASSWORD) {
@@ -19,6 +20,14 @@ const signin = async (req, res) => {
   }
 }
 
+const authenticate = async (req, res) => {
+  const { token } = req.body
+  await helpers.verifyJWToken(token)
+  
+  res.status(200).json({ message: 'authenticated' })
+}
+
 export default {
   signin,
+  authenticate,
 }
