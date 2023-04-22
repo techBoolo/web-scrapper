@@ -10,8 +10,12 @@ const create = async (postData) => {
   const db = getDB()
   return await db.post.upsert({
     where: { source: source },
-    update: rest,
-    create: postData,
+    update: {
+      ...rest
+    },
+    create: {
+      ...postData
+    },
   })
 }
 

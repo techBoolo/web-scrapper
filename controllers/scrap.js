@@ -10,14 +10,25 @@ const switchScrapper = async (source) => {
       case 'reporter':
         try {
           const result = await scrap(scrappers.reporter, data.reporter)
-          response = await Post.create(result)
+          const response = await Post.create(result)
           resolve(response)
         } catch (err) {
           reject(err)
         }
         break;
-      case 'news':
-        console.log(source);
+      case 'addisstandard':
+        try {
+          console.log(source);
+        } catch (err) {
+          /* handle error */
+        }
+        break;
+      case 'addisadmassnews':
+        try {
+          console.log(source);
+        } catch (err) {
+          /* handle error */
+        }
         break;
       default:
         reject(new ErrorResponse({ statusCode: 404, message: 'Source is not in the list' }))

@@ -13,12 +13,12 @@ datasource db {
 
 model Post {
   id           String    @id @default(uuid())
-  source       String
+  source       String    @unique
   title        String
   content      String
   link         String
   homePage     String    @map("home_page")
-  postDate     DateTime? @map("post_date")
+  postDate     DateTime? @map("post_date") @db.Timestamptz(3)
   dateScrapped DateTime  @default(now()) @map("date_scrapped")
 
   @@map("posts")

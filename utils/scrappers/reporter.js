@@ -24,7 +24,7 @@ export default async function scrapReporter(page, reporterSourceData) {
   selector = await page.waitForSelector(dateSelector)
   const date = await selector.evaluate(el => {
     return {
-//      postDate: new Date(el.textContent),
+      postDate: el.innerHTML
     }
   })
 
@@ -33,8 +33,7 @@ export default async function scrapReporter(page, reporterSourceData) {
     homePage: pageUrl,
     ...titleUrl,
     ...content,
- //   ...date
+    postDate: new Date(date.postDate)
   }
-  console.log(scrappedData);
   return scrappedData
 }
