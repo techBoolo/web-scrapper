@@ -1,9 +1,7 @@
 import reporter from './reporter.js'
-import addisadmassnews from './addisadmassnews.js'
-import addisstandard from './addisstandard.js'
+import scrapper from './scrapper.js'
 
 export default {
   reporter,
-  addisadmassnews,
-  addisstandard,
+  scrapper,
 }

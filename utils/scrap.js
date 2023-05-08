@@ -5,8 +5,8 @@ export default async function scrap(scrapper, template) {
   const page = await browser.newPage()
 
   try {
-    const reporter = await scrapper(page, template)
-    return reporter
+    const data = await scrapper(page, template)
+    return data
   } finally {
     await browser.close()
   }

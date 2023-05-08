@@ -18,20 +18,67 @@ const switchScrapper = async (source) => {
         break;
       case 'addisstandard':
         try {
-          console.log(source);
+          const result = await scrap(scrappers.scrapper, data.addisstandard)
+          const response = await Post.create(result)
+          resolve(response)
         } catch (err) {
-          /* handle error */
+          reject(err)
         }
         break;
       case 'addisadmassnews':
         try {
-          console.log(source);
+          const result = await scrap(scrappers.scrapper, data.addisadmassnews)
         } catch (err) {
-          /* handle error */
+          reject(err)
+        }
+        break;
+      case 'zehabesha':
+        try {
+          const result = await scrap(scrappers.scrapper, data.zehabesha)
+          const response = await Post.create(result)
+          resolve(response)
+        } catch (err) {
+          reject(err)
+        }
+        break;
+      case 'waltainfo':
+        try {
+          const result = await scrap(scrappers.scrapper, data.waltainfo)
+          const response = await Post.create(result)
+          resolve(response)
+        } catch (err) {
+          reject(err)
+        }
+        break;
+      case 'ethiopianobserver':
+        try {
+          const result = await scrap(scrappers.scrapper, data.ethiopianobserver)
+          const response = await Post.create(result)
+          resolve(response)
+        } catch (err) {
+          reject(err)
+        }
+        break;
+      case 'addisfortune':
+        try {
+          const result = await scrap(scrappers.scrapper, data.addisfortune)
+          const response = await Post.create(result)
+          resolve(response)
+        } catch (err) {
+          reject(err)
+        }
+        break;
+      case 'satenaw':
+        try {
+          const result = await scrap(scrappers.scrapper, data.satenaw)
+          const response = await Post.create(result)
+          resolve(response)
+        } catch (err) {
+          reject(err)
         }
         break;
       default:
-        reject(new ErrorResponse({ statusCode: 404, message: 'Source is not in the list' }))
+        reject(new ErrorResponse({ statusCode: 404, message: 'rejected, Source is not in the list' }))
     }
   })
 }

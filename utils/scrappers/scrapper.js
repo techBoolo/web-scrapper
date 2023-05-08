@@ -1,5 +1,6 @@
 export default async function scrapper(page, sourceData) {
   const pageUrl = sourceData.source
+  await page.setDefaultNavigationTimeout(0)
   await page.goto(pageUrl)
 
   const titleSelector = sourceData.dataSource.title_url.url

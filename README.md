@@ -1,3 +1,5 @@
 # Web Scrapper
 
-Scrap different web sites.
+Scrap different web sites for local news.
+
+
